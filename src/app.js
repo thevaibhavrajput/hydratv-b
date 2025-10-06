@@ -10,7 +10,6 @@ import { AppError } from './utils/errors.js';
 import { fail } from './utils/response.js';
 import hianimeApiDocs from './utils/swaggerUi.js';
 import { logger } from 'hono/logger';
-import express from "express";
 
 
 
@@ -18,7 +17,7 @@ const app = new Hono();
 
 config();
 
-const origins = process.env.ORIGIN ? process.env.ORIGIN.split(',') : '*';
+const origins = process.env.ORIGIN;
 
 // third party middlewares
 app.use(
