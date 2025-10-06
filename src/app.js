@@ -12,30 +12,7 @@ import hianimeApiDocs from './utils/swaggerUi.js';
 import { logger } from 'hono/logger';
 import express from "express";
 
-import dotenv from "dotenv";
 
-dotenv.config();
-
-// ✅ CORS configuration (very important)
-const allowedOrigins = [
-  "https://hydratvv.vercel.app", // your frontend on Vercel
-  "http://localhost:5173"        // for local testing
-];
-
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
-
-// ✅ Other middleware
 
 const app = new Hono();
 
