@@ -17,15 +17,15 @@ const app = new Hono();
 
 config();
 
-const origins = process.env.ORIGIN;
+const origins = process.env.ORIGIN || "https://hydratvv.vercel.app";
 
 // third party middlewares
 app.use(
-  '*',
   cors({
     origin: origins,
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowHeaders: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   })
 );
 
