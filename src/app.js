@@ -11,7 +11,7 @@ import { fail } from './utils/response.js';
 import hianimeApiDocs from './utils/swaggerUi.js';
 import { logger } from 'hono/logger';
 import express from "express";
-import cors from "cors";
+
 import dotenv from "dotenv";
 
 dotenv.config();
